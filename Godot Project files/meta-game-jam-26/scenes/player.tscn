@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://trywo3xopl2i"]
 
-[ext_resource type="Script" uid="uid://tl7ujpcqi4bg" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bjhlbyg4g4157" path="res://scripts/Player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bq4sdsxaohibp" path="res://assets/Characters/Soldier/Soldier/Soldier_Idle.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cy5kpjyx4q71v" path="res://assets/Characters/Soldier/Soldier/Soldier_Walk.png" id="3_dqkch"]
 
@@ -120,7 +120,8 @@ radius = 5.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=431031109]
-script = ExtResource("1_3vyb7")
+z_index = 5
+script = ExtResource("1_qhqgy")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=219381713]
