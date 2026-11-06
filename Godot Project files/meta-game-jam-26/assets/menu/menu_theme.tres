@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://ck606rocfli0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f5im"]
+bg_color = Color(0.18948883, 0.2925714, 0.38324392, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_76hi8"]
+font_names = PackedStringArray("Unispace")
+
+[resource]
+default_font = SubResource("SystemFont_76hi8")
+default_font_size = 32
+Button/font_sizes/font_size = 16
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2f5im")
+RichTextLabelTitle/base_type = &"RichTextLabel"
+RichTextLabelTitle/font_sizes/normal_font_size = 100
+VBoxContainer/constants/separation = 15
