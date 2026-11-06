@@ -13,3 +13,4 @@ Button/font_sizes/font_size = 16
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2f5im")
 RichTextLabelTitle/base_type = &"RichTextLabel"
 RichTextLabelTitle/font_sizes/normal_font_size = 100
+VBoxContainer/constants/separation = 15
