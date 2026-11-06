@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c753mu8ffg5bj"]
+
+[ext_resource type="Theme" uid="uid://ck606rocfli0w" path="res://assets/menu/menu_theme.tres" id="1_sa3yf"]
+[ext_resource type="PackedScene" uid="uid://bob8q8apo0vp8" path="res://scenes/button.tscn" id="2_s4lrb"]
+
+[sub_resource type="Theme" id="Theme_omjc6"]
+
+[node name="TitleScreen" type="Control" unique_id=301558176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sa3yf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1040148240]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1940311538]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1889731560]
+layout_mode = 2
+theme = SubResource("Theme_omjc6")
+theme_type_variation = &"RichTextLabelTitle"
+text = "Fallen ..."
+fit_content = true
+autowrap_mode = 0
+
+[node name="PlayButton" parent="PanelContainer/VBoxContainer" unique_id=1333493606 instance=ExtResource("2_s4lrb")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OptionButton" parent="PanelContainer/VBoxContainer" unique_id=1008493053 instance=ExtResource("2_s4lrb")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="QuitButton" parent="PanelContainer/VBoxContainer" unique_id=289909700 instance=ExtResource("2_s4lrb")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
