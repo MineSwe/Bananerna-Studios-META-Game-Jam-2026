@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="META Game Jam 26"
-run/main_scene="uid://005f8acttjpt"
+run/main_scene="uid://c753mu8ffg5bj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
