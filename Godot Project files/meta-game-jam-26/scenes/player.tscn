@@ -186,11 +186,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjliw"]
 radius = 9.0
-height = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=431031109]
 z_index = 5
-position = Vector2(-1, 0)
 script = ExtResource("1_qhqgy")
 metadata/_edit_group_ = true
 

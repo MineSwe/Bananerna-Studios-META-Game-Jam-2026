@@ -46,7 +46,7 @@ layout_mode = 2
 
 [node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1436927638]
 layout_mode = 2
-text = "Exit"
+text = "Close Menu"
 script = ExtResource("2_2iy26")
 
 [connection signal="mouse_exited" from="." to="PanelContainer/VBoxContainer/VolumeSlider" method="_on_control_mouse_exited"]
