@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ctstt70ebi8ar"]
 
 [ext_resource type="Script" uid="uid://cjdjv7tdm1tel" path="res://scripts/intro_cutscene.gd" id="1_vuduy"]
-[ext_resource type="PackedScene" uid="uid://005f8acttjpt" path="res://scenes/node_2d.tscn" id="2_juow0"]
-[ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/player.tscn" id="3_3438a"]
+[ext_resource type="Texture2D" uid="uid://qbvqiqugybl7" path="res://assets/Characters/Soldier/SoldierFalling.png" id="2_wifpd"]
+[ext_resource type="PackedScene" uid="uid://c00h6m8n8lo0x" path="res://scenes/Level design.tscn" id="3_dw6o5"]
+[ext_resource type="AudioStream" uid="uid://cqnw5csvhd2hc" path="res://assets/audio/dragon-studio-harsh-wind-515272.mp3" id="4_xeku4"]
 
 [sub_resource type="Animation" id="Animation_wifpd"]
 resource_name = "IntroCutscene"
@@ -18,30 +19,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(143, -1166.055)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(143, -1366.085), Vector2(143, -1266), Vector2(143, -1166.055)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Player2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-1.0471975511965976, -3.141592653589793, -5.235987755982989]
 }
 
 [sub_resource type="Animation" id="Animation_3438a"]
@@ -61,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player2:position")
+tracks/1/path = NodePath("FallingPlayer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,14 +50,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Player2:rotation")
+tracks/2/path = NodePath("FallingPlayer:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 8.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-1.0471975511965976, -3.141592653589793, -5.235987755982989, -7.3303828583761845, -9.42477796076938, -11.519173063162574, -13.61356816555577, -15.707963267948966, -18.84955592153876, -20.097466336714703]
+"values": [-1.0471975511965976, -3.141592653589793, -5.235987755982989, -7.330382858376184, -9.42477796076938, -11.519173063162574, -13.61356816555577, -15.707963267948966, -18.84955592153876, -20.097466336714703]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D2:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.5, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.030000000000001137, -6.486999999999995, -80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dw6o5"]
@@ -96,18 +85,23 @@ script = ExtResource("1_vuduy")
 libraries/ = SubResource("AnimationLibrary_dw6o5")
 autoplay = &"RESET"
 
-[node name="Node2D" parent="." unique_id=849365043 instance=ExtResource("2_juow0")]
-position = Vector2(277, 342)
-metadata/_edit_lock_ = true
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=566848162]
 
-[node name="Player2" parent="." unique_id=431031109 instance=ExtResource("3_3438a")]
+[node name="Level1" parent="." unique_id=2007199909 instance=ExtResource("3_dw6o5")]
+position = Vector2(277, 342)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1506999170]
+stream = ExtResource("4_xeku4")
+volume_db = -0.03
+autoplay = true
+
+[node name="FallingPlayer" type="Sprite2D" parent="." unique_id=1837020151]
 position = Vector2(143, -1366)
 rotation = -1.0471976
+texture = ExtResource("2_wifpd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=467562660]
 position = Vector2(143, -1266)
 zoom = Vector2(6.225, 6.225)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=566848162]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
