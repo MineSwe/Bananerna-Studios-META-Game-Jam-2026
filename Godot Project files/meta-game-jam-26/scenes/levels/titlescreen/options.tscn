@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwwqaagguiiux"]
 
-[ext_resource type="Script" uid="uid://cdxbvkca4ejj6" path="res://scripts/volume_slider.gd" id="1_yjkok"]
-[ext_resource type="Script" uid="uid://cj7hnrv1hoj45" path="res://scripts/exit_button.gd" id="2_2iy26"]
+[ext_resource type="Script" uid="uid://cdxbvkca4ejj6" path="res://scripts/ui/volume_slider.gd" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://cj7hnrv1hoj45" path="res://scripts/ui/exit_button.gd" id="2_2iy26"]
 
 [node name="Options" type="Control" unique_id=368678754]
 layout_mode = 3

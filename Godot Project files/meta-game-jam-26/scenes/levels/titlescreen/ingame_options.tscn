@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://v153r48llfp5"]
 
-[ext_resource type="Script" uid="uid://cdxbvkca4ejj6" path="res://scripts/volume_slider.gd" id="1_sedlt"]
-[ext_resource type="Script" uid="uid://b0787ipckayhn" path="res://ingame_close_button.gd" id="2_85mnd"]
-[ext_resource type="PackedScene" uid="uid://bob8q8apo0vp8" path="res://scenes/button.tscn" id="3_4xfwy"]
-[ext_resource type="Script" uid="uid://4bin0lyxpq0n" path="res://scripts/QuitButton.gd" id="4_a4q18"]
+[ext_resource type="Script" uid="uid://cdxbvkca4ejj6" path="res://scripts/ui/volume_slider.gd" id="1_sedlt"]
+[ext_resource type="Script" uid="uid://b0787ipckayhn" path="res://scripts/ui/ingame_close_button.gd" id="2_85mnd"]
+[ext_resource type="PackedScene" uid="uid://bob8q8apo0vp8" path="res://scenes/prefabs/button.tscn" id="3_4xfwy"]
+[ext_resource type="Script" uid="uid://4bin0lyxpq0n" path="res://scripts/ui/quit_button.gd" id="4_a4q18"]
 
 [node name="IngameOptions" type="Control" unique_id=1063647045]
 layout_mode = 3

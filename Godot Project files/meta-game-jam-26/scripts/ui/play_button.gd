@@ -20,7 +20,7 @@ func _on_pressed() -> void:
 	
 
 func _on_tween_finished() -> void:
-	get_tree().change_scene_to_file("res://scenes/intro_cutscene.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/intro_cutscene.tscn")
 
 
 func _on_mouse_entered() -> void:
