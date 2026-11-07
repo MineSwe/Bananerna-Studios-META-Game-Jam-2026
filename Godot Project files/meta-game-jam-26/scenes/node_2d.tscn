@@ -10,3 +10,5 @@ position = Vector2(0, -1)
 
 [node name="Player" parent="." unique_id=431031109 instance=ExtResource("2_rnjyy")]
 position = Vector2(-28, -38)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=232054346]
