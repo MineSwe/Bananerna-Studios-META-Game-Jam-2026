@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dr4fw58d7hvok" path="res://assets/citytextures.png" id="2_dw26h"]
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/player.tscn" id="2_odhdn"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/leafparticles.tscn" id="4_dwgg1"]
+[ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/ingame_options.tscn" id="5_ru4tf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_odhdn")
@@ -825,7 +826,7 @@ tile_set = SubResource("TileSet_svatc")
 tile_set = SubResource("TileSet_svatc")
 
 [node name="Player" parent="." unique_id=431031109 instance=ExtResource("2_odhdn")]
-position = Vector2(-28, -38)
+position = Vector2(-140, -27)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1113680403]
 zoom = Vector2(3.045, 3.045)
@@ -833,6 +834,11 @@ limit_left = -205
 limit_bottom = 110
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="IngameOptions" parent="Player/Camera2D" unique_id=1063647045 instance=ExtResource("5_ru4tf")]
+visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="CPUParticles2D" parent="Player" unique_id=1165135826 instance=ExtResource("4_dwgg1")]
 position = Vector2(-276, -224)
