@@ -56,6 +56,17 @@ size_flags_horizontal = 4
 text = "Quit"
 script = ExtResource("4_dc4i4")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1350315219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 655.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/OptionButton" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_pressed"]
