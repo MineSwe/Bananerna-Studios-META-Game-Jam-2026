@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bsu0ttyq2sluk"]
+[gd_scene format=3 uid="uid://524scm75e6qb"]
 
 [ext_resource type="Texture2D" uid="uid://co8wo6x6edv2v" path="res://assets/Characters/Orc/Orc/Orc.png" id="1_1lk88"]
-[ext_resource type="Script" uid="uid://ds4dm1f18hbd1" path="res://scripts/npc.gd" id="1_okhy7"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_okhy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okhy7"]
 atlas = ExtResource("1_1lk88")
@@ -302,7 +302,7 @@ script = ExtResource("1_okhy7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1163664611]
 sprite_frames = SubResource("SpriteFrames_yij3p")
 animation = &"idle"
-frame_progress = 0.20866367
+frame_progress = 0.13070853
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1961887148]
 shape = SubResource("CapsuleShape2D_eg5tr")
