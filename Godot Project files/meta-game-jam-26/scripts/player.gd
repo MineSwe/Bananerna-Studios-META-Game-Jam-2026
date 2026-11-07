@@ -4,7 +4,11 @@ extends CharacterBody2D
 @onready var options = get_node("Camera2D/IngameOptions")
 
 const SPEED = 80.0
-const JUMP_VELOCITY = -400.0
+
+var jump_velocity = -400.0
+
+
+
 
 
 func _physics_process(delta: float) -> void:
@@ -14,16 +18,23 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 
 	if Input.is_action_just_pressed("esc"):
 		print("esc")
 		options.visible = true
+	
 
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
+	if (options.visible == true):
+		direction = 0
+		jump_velocity = 0
+	else:
+		jump_velocity = -400.0
 	if direction:
 		velocity.x = direction * SPEED
 	else:
