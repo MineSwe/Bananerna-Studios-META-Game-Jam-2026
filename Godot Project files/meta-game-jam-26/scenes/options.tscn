@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bxx0hgfj7g5u6"]
+
+[sub_resource type="GDScript" id="GDScript_ug6xu"]
+script/source = "extends HSlider
+
+@export var audio_bus_name := \"Master\"
+
+@onready var _bus := AudioServer.get_bus_index(audio_bus_name)
+
+func _ready() -> void:
+	value = db_to_linear(AudioServer.get_bus_volume_db(_bus))
+
+
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(_bus, linear_to_db(value))
+
+
+func _on_control_mouse_exited() -> void:
+	release_focus()
+"
+
+[sub_resource type="GDScript" id="GDScript_sx3uy"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/title_screen.tscn\")
+"
+
+[node name="Options" type="Control" unique_id=368678754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=350225432]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1654327292]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Sound" type="Label" parent="PanelContainer/VBoxContainer" unique_id=968639384]
+layout_mode = 2
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1935386679]
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = SubResource("GDScript_ug6xu")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=322478908]
+custom_minimum_size = Vector2(-3.975, 25.315)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1436927638]
+layout_mode = 2
+text = "Close Menu"
+script = SubResource("GDScript_sx3uy")
+
+[connection signal="mouse_exited" from="." to="PanelContainer/VBoxContainer/VolumeSlider" method="_on_control_mouse_exited"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="PanelContainer/VBoxContainer/VolumeSlider" method="_on_value_changed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ExitButton" to="PanelContainer/VBoxContainer/ExitButton" method="_on_pressed"]
