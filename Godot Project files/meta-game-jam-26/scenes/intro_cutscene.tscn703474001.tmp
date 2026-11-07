@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ctstt70ebi8ar"]
+
+[ext_resource type="Script" uid="uid://cjdjv7tdm1tel" path="res://scripts/intro_cutscene.gd" id="1_vuduy"]
+[ext_resource type="PackedScene" uid="uid://005f8acttjpt" path="res://scenes/node_2d.tscn" id="2_juow0"]
+
+[node name="IntroCutscene" type="Node2D" unique_id=1046759027]
+script = ExtResource("1_vuduy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=985516323]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=467562660]
+
+[node name="Node2D" parent="." unique_id=849365043 instance=ExtResource("2_juow0")]
+position = Vector2(277, 342)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
