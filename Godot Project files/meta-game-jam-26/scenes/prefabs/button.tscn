@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bob8q8apo0vp8"]
 
+[ext_resource type="Script" uid="uid://cr6dipgry0e3n" path="res://scripts/ui/button.gd" id="1_rhj8v"]
+
 [node name="PlayButton" type="Button" unique_id=1333493606]
 custom_minimum_size = Vector2(300, 100)
 text = "Play"
+script = ExtResource("1_rhj8v")

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://c753mu8ffg5bj"]
+
+[ext_resource type="Theme" uid="uid://ck606rocfli0w" path="res://assets/menu/menu_theme.tres" id="1_0mdev"]
+[ext_resource type="PackedScene" uid="uid://bob8q8apo0vp8" path="res://scenes/prefabs/button.tscn" id="2_utkw2"]
+[ext_resource type="Script" uid="uid://c8tjxybkw30uf" path="res://scripts/ui/play_button.gd" id="3_uu13b"]
+[ext_resource type="AudioStream" uid="uid://bdjd0ejsnrswb" path="res://assets/audio/freesound_community-short-beep-tone-47916.mp3" id="4_xfnex"]
+[ext_resource type="AudioStream" uid="uid://devthswdulm3y" path="res://assets/audio/freesound_community-start-sound-beep-102201.mp3" id="5_4vono"]
+[ext_resource type="Script" uid="uid://5r6gr3sf08r8" path="res://scripts/ui/option_button.gd" id="6_g5cku"]
+[ext_resource type="Script" uid="uid://4bin0lyxpq0n" path="res://scripts/ui/quit_button.gd" id="7_4gy5f"]
+
+[sub_resource type="Theme" id="Theme_omjc6"]
+
+[node name="TitleScreen" type="Control" unique_id=301558176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0mdev")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1040148240]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1940311538]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1889731560]
+layout_mode = 2
+theme = SubResource("Theme_omjc6")
+theme_type_variation = &"RichTextLabelTitle"
+bbcode_enabled = true
+text = "[wave amp=75 freq=2]Fallen Town"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PlayButton" parent="PanelContainer/VBoxContainer" unique_id=1333493606 instance=ExtResource("2_utkw2")]
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("3_uu13b")
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/PlayButton" unique_id=913905905]
+stream = ExtResource("4_xfnex")
+volume_db = -5.699
+pitch_scale = 0.89
+
+[node name="Click" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/PlayButton" unique_id=331080089]
+stream = ExtResource("5_4vono")
+volume_db = -5.699
+
+[node name="OptionButton" parent="PanelContainer/VBoxContainer" unique_id=1008493053 instance=ExtResource("2_utkw2")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+script = ExtResource("6_g5cku")
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/OptionButton" unique_id=2045385607]
+stream = ExtResource("4_xfnex")
+volume_db = -5.699
+pitch_scale = 0.89
+
+[node name="QuitButton" parent="PanelContainer/VBoxContainer" unique_id=289909700 instance=ExtResource("2_utkw2")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
+script = ExtResource("7_4gy5f")
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/QuitButton" unique_id=91113350]
+stream = ExtResource("4_xfnex")
+volume_db = -5.699
+pitch_scale = 0.89
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1350315219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 655.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/OptionButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/OptionButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_pressed"]

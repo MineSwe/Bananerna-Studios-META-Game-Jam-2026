@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://640rq68ur45v"]
 
-[ext_resource type="PackedScene" uid="uid://c00h6m8n8lo0x" path="res://scenes/Level design.tscn" id="1_4dvvg"]
+[ext_resource type="PackedScene" uid="uid://bp5co10lcgjxt" path="res://scenes/Level design.tscn" id="1_4dvvg"]
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/player.tscn" id="2_rnjyy"]
 [ext_resource type="PackedScene" uid="uid://bsu0ttyq2sluk" path="res://scenes/orc_npc.tscn" id="3_rnjyy"]
 

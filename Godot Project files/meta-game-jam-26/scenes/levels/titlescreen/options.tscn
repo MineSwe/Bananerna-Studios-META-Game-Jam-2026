@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bwwqaagguiiux"]
+
+[ext_resource type="Script" uid="uid://cdxbvkca4ejj6" path="res://scripts/ui/volume_slider.gd" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://cj7hnrv1hoj45" path="res://scripts/ui/exit_button.gd" id="2_2iy26"]
+
+[node name="Options" type="Control" unique_id=368678754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=350225432]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1654327292]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Sound" type="Label" parent="PanelContainer/VBoxContainer" unique_id=968639384]
+layout_mode = 2
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1935386679]
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_yjkok")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=322478908]
+custom_minimum_size = Vector2(-3.975, 25.315)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1436927638]
+layout_mode = 2
+text = "Close Menu"
+script = ExtResource("2_2iy26")
+
+[connection signal="mouse_exited" from="." to="PanelContainer/VBoxContainer/VolumeSlider" method="_on_control_mouse_exited"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="PanelContainer/VBoxContainer/VolumeSlider" method="_on_value_changed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ExitButton" to="PanelContainer/VBoxContainer/ExitButton" method="_on_pressed"]

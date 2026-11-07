@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr4fw58d7hvok"
-path="res://.godot/imported/citytextures.png-d2d7f7200bf34997d35c0abe8f98da60.ctex"
+uid="uid://qbvqiqugybl7"
+path="res://.godot/imported/SoldierFalling.png-9f11055a7946b93d88fcc7447c61ab15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/citytextures.png"
-dest_files=["res://.godot/imported/citytextures.png-d2d7f7200bf34997d35c0abe8f98da60.ctex"]
+source_file="res://assets/Characters/Soldier/SoldierFalling.png"
+dest_files=["res://.godot/imported/SoldierFalling.png-9f11055a7946b93d88fcc7447c61ab15.ctex"]
 
 [params]
 
