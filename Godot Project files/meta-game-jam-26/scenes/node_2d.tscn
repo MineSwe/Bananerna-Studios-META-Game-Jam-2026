@@ -15,4 +15,5 @@ position = Vector2(-28, -38)
 zoom = Vector2(3.045, 3.045)
 limit_left = -205
 limit_bottom = 110
+limit_smoothed = true
 position_smoothing_enabled = true
