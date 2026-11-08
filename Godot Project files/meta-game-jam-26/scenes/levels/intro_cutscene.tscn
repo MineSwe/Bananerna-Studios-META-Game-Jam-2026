@@ -947,6 +947,7 @@ stream = ExtResource("6_rnvi1")
 volume_db = -4.449
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1660877609]
+z_index = -1
 position = Vector2(277, 342)
 
 [node name="Sky" type="TileMapLayer" parent="Node2D" unique_id=2118942481]

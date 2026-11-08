@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b2n61jll4vvgq"]
 
+[ext_resource type="Script" uid="uid://2frip06oeb2p" path="res://scripts/level_1.gd" id="1_1seuy"]
 [ext_resource type="Texture2D" uid="uid://bop6vphs1dsmi" path="res://assets/map_textures/randomtextures.png" id="1_dywbp"]
 [ext_resource type="Texture2D" uid="uid://dr4fw58d7hvok" path="res://assets/map_textures/citytextures.png" id="2_1seuy"]
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
@@ -803,6 +804,7 @@ sources/0 = SubResource("TileSetAtlasSource_lrl65")
 sources/2 = SubResource("TileSetAtlasSource_76388")
 
 [node name="Node2D" type="Node2D" unique_id=849365043]
+script = ExtResource("1_1seuy")
 
 [node name="Level" type="Node" parent="." unique_id=638681290]
 
