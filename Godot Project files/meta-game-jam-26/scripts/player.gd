@@ -4,12 +4,9 @@ extends CharacterBody2D
 @onready var options = get_node("Camera2D/IngameOptions")
 
 const SPEED = 80.0
-
 var jump_velocity = -400.0
 
-
-
-
+@onready var getNPC = get_parent().get_node("Grasshopper")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -53,4 +50,7 @@ func animation_handler() -> void:
 		animated_sprite_2d.flip_h = true
 	else:
 		animated_sprite_2d.play("idle")
-	 
+
+func _on_grasshopper_dialog() -> void:
+	$Label.visible = true
+	pass # Replace with function body.
