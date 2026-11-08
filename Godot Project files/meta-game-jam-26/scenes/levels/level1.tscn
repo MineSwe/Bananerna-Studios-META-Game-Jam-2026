@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/levels/titlescreen/ingame_options.tscn" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
+[ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -842,3 +843,9 @@ size_flags_vertical = 0
 
 [node name="CPUParticles2D" parent="Player" unique_id=1165135826 instance=ExtResource("5_plydf")]
 position = Vector2(-276, -224)
+
+[node name="Grasshopper" parent="." unique_id=2126713087 instance=ExtResource("6_1seuy")]
+z_index = 4
+position = Vector2(100, 17)
+
+[connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
