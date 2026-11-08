@@ -50,7 +50,3 @@ func animation_handler() -> void:
 		animated_sprite_2d.flip_h = true
 	else:
 		animated_sprite_2d.play("idle")
-
-func _on_grasshopper_dialog() -> void:
-	$Label.visible = true
-	pass # Replace with function body.
