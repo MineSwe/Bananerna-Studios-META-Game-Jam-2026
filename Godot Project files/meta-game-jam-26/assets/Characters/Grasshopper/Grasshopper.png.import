@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpuysknl5fkbx"
-path="res://.godot/imported/sticks.png-789dfc26ddc22ce9f889a68ba087a60d.ctex"
+uid="uid://bbn5lvt3030go"
+path="res://.godot/imported/Grasshopper.png-5a3386e87e4006ccffbd0e97cfeef122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Controllers and Keyboard/sticks.png"
-dest_files=["res://.godot/imported/sticks.png-789dfc26ddc22ce9f889a68ba087a60d.ctex"]
+source_file="res://assets/Characters/Grasshopper/Grasshopper.png"
+dest_files=["res://.godot/imported/Grasshopper.png-5a3386e87e4006ccffbd0e97cfeef122.ctex"]
 
 [params]
 
