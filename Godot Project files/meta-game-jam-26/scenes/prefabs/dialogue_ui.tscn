@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bxw87wn8lb8g7"]
+
+[ext_resource type="Script" uid="uid://chxpq4hrvccjn" path="res://scripts/ui/dialogue.gd" id="1_dxd25"]
+
+[node name="dialogue_ui" type="Control" unique_id=266174670]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxd25")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=949848687]
+visible = false
+
+[node name="bg" type="ColorRect" parent="CanvasLayer" unique_id=352577837]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.0
+offset_top = 40.0
+offset_right = 470.0
+offset_bottom = 195.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.44313726)
+
+[node name="dialogue" type="RichTextLabel" parent="CanvasLayer/bg" unique_id=187775909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
+text = "Iognisaon ionjaios njgiojgi oajgio jasio gjsioa jgioasj iojasio gjios gjiao jgiojiog jaio jgiosa jiogji oajiog jasio jia jgio jsaiog jisoaj goisaj iogsajio gjasio jgioasjiog jiojsiao jios jio"
+scroll_active = false
+visible_characters_behavior = 1
