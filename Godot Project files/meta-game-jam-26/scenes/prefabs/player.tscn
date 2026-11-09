@@ -172,7 +172,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjliw"]
 radius = 9.0
 
-[node name="Player" type="CharacterBody2D" unique_id=431031109]
+[node name="Player" type="CharacterBody2D" unique_id=431031109 groups=["Player"]]
 z_index = 5
 collision_layer = 3
 script = ExtResource("1_qhqgy")
@@ -181,7 +181,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=219381713]
 sprite_frames = SubResource("SpriteFrames_r3d6m")
 animation = &"idle"
-frame_progress = 0.9008145
+frame_progress = 0.16331151
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440764710]
 position = Vector2(0, -1)
