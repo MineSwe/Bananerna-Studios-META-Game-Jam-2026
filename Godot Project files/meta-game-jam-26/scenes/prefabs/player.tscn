@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bjhlbyg4g4157" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ck3nwupskch1l" path="res://assets/Characters/Ladybug/ladybug_attack.png" id="2_n0leu"]
 [ext_resource type="Texture2D" uid="uid://bgl2tiym3uarh" path="res://assets/Characters/Ladybug/Ladybug.png" id="3_qlg0r"]
+[ext_resource type="Script" uid="uid://dne4r047bx7hx" path="res://scripts/attack_hitbox.gd" id="4_8cdkg"]
+[ext_resource type="Script" uid="uid://cp008pwnw0qbk" path="res://scripts/hurtbox.gd" id="4_56dyf"]
+[ext_resource type="Script" uid="uid://cvgh1ogkyrx1f" path="res://scenes/prefabs/player_hp.gd" id="6_6o77n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8cdkg"]
 atlas = ExtResource("2_n0leu")
@@ -163,8 +166,21 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjliw"]
 radius = 9.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r3d6m"]
+height = 32.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe0qj"]
 size = Vector2(41, 31)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o77n"]
+bg_color = Color(0.59041446, 0.09582592, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v0jn"]
+bg_color = Color(0.01086364, 0.7231991, 0.25968185, 1)
+
+[sub_resource type="Theme" id="Theme_56dyf"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_6o77n")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_6v0jn")
 
 [node name="Player" type="CharacterBody2D" unique_id=431031109 groups=["Player"]]
 z_index = 5
@@ -180,13 +196,38 @@ animation = &"idle"
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_wjliw")
 
+[node name="Area2D2" type="Area2D" parent="." unique_id=1383115171]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_56dyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1567289311]
+shape = SubResource("CapsuleShape2D_r3d6m")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1965449616]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("4_8cdkg")
 
 [node name="AttackCollision" type="CollisionShape2D" parent="Area2D" unique_id=170519502]
 position = Vector2(21.5, -0.5)
 shape = SubResource("RectangleShape2D_qe0qj")
 disabled = true
+
+[node name="AttackCollision2" type="CollisionShape2D" parent="Area2D" unique_id=692872759]
+position = Vector2(-21.26, -0.5)
+shape = SubResource("RectangleShape2D_qe0qj")
+disabled = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1126789247]
+offset_left = -11.0
+offset_top = -27.0
+offset_right = 12.0
+offset_bottom = -23.0
+theme = SubResource("Theme_56dyf")
+max_value = 30.0
+value = 30.0
+show_percentage = false
+script = ExtResource("6_6o77n")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
