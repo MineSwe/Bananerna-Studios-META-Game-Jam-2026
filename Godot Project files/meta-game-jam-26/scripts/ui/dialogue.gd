@@ -25,6 +25,19 @@ func _on_grasshopper_dialog() -> void:
 	is_talking = true
 	$CanvasLayer.visible = true
 
+func _on_boss_dialog() -> void:
+	current_text_id = 0
+	text = [
+		"0̲͍̓1͉̙̿1̘̓ͮ0͙̒0̥ͯ0̮̐1͚̰́̎0̲̞̙ͭͣ͊0͓ͅ1̗̉0̟͗ͥ̇0ͧ",
+		"0̼ͫ̔0͔̤1͋̊1̓ 0ͦ1̳̋͂0̣1͓̌̾0͉̩͒01͕͈͋ͦ",
+		"Ah, a newcomer...",
+		"Come closer... s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m is here...",
+		"join s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m... or  d i e",
+	]
+	dialogue.text = text[current_text_id]
+	is_talking = true
+	$CanvasLayer.visible = true
+
 func _physics_process(delta: float) -> void:
 	if is_talking == true and options.visible == false:
 		if dialogue.visible_ratio != 1.0:

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bop6vphs1dsmi" path="res://assets/map_textures/randomtextures.png" id="1_dywbp"]
 [ext_resource type="Texture2D" uid="uid://dr4fw58d7hvok" path="res://assets/map_textures/citytextures.png" id="2_1seuy"]
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
-[ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/levels/titlescreen/ingame_options.tscn" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
 
@@ -804,9 +803,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lrl65")
 sources/2 = SubResource("TileSetAtlasSource_76388")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjliw"]
-size = Vector2(636, 412.41003)
-
 [node name="Node2D" type="Node2D" unique_id=849365043]
 script = ExtResource("1_1seuy")
 
@@ -855,4 +851,3 @@ z_index = 4
 position = Vector2(100, 17)
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
-
