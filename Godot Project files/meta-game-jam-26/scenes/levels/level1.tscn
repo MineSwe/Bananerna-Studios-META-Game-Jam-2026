@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/levels/titlescreen/ingame_options.tscn" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
+[ext_resource type="PackedScene" uid="uid://bcnjwp4n17h5g" path="res://scenes/prefabs/boss.tscn" id="8_8a7m2"]
+[ext_resource type="Script" uid="uid://83homfvxw5v8" path="res://scenes/levels/boss_music.gd" id="9_plydf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -804,6 +806,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lrl65")
 sources/2 = SubResource("TileSetAtlasSource_76388")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjliw"]
+size = Vector2(636, 412.41003)
+
 [node name="Node2D" type="Node2D" unique_id=849365043]
 script = ExtResource("1_1seuy")
 
@@ -836,7 +841,6 @@ tile_set = SubResource("TileSet_svatc")
 position = Vector2(-140, -27)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1113680403]
-zoom = Vector2(3.045, 3.045)
 limit_left = -331
 limit_bottom = 110
 limit_smoothed = true
@@ -857,5 +861,18 @@ angle_min = 7.3
 z_index = 4
 position = Vector2(100, 17)
 
-[connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
+[node name="Boss" parent="." unique_id=868949996 instance=ExtResource("8_8a7m2")]
+z_index = 6
+position = Vector2(1126, -12)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1024946195]
+z_index = 9
+position = Vector2(0, 275.82)
+script = ExtResource("9_plydf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1863488439]
+position = Vector2(915, -466.615)
+shape = SubResource("RectangleShape2D_wjliw")
+
+[connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
