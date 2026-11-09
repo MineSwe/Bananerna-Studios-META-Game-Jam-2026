@@ -9,7 +9,7 @@ var is_talking = false
 signal dialog
 
 func _physics_process(delta: float) -> void:
-	player_pos = get_parent().get_node("Player").position
+	player_pos = getPlayer.position
 	animation_handler()
 	if Input.is_action_pressed("talk") && is_in_range == true && is_talking == false:
 		_dialog()

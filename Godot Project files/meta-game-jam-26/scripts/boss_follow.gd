@@ -10,6 +10,8 @@ func enter():
 	player = get_tree().get_first_node_in_group("Player")
 
 func physics_update(delta: float):
+	if owner.dying == true:
+		Transitioned.emit(self, "Dying")
 	var direction = Vector2(player.global_position.x - enemy.global_position.x, 0)
 	print(direction.length())
 	if direction.length() > 25:

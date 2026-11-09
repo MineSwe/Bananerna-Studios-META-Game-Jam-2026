@@ -1,9 +1,6 @@
 extends Area2D
 class_name HurtBox
 
-func _init() -> void:
-	collision_layer = 0
-	collision_mask = 1
 	
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
