@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://d1vl30nc35eu7"]
+
+[ext_resource type="Script" uid="uid://c0552vejdc6oj" path="res://scripts/npc.gd" id="1_okhy7"]
+[ext_resource type="Texture2D" uid="uid://bbn5lvt3030go" path="res://assets/Characters/Grasshopper/Grasshopper.png" id="1_tl7gr"]
+[ext_resource type="Texture2D" uid="uid://c24ki3db0fpnw" path="res://assets/ui/Controllers and Keyboard/kb_dark_alphanumeric.png" id="3_le2lq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gsf2"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le2lq"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmj1c"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ks2h"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eod0h"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phgc7"]
+atlas = ExtResource("1_tl7gr")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yij3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gsf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le2lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmj1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gsf2")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ks2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eod0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phgc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ks2h")
+}],
+"loop": 1,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51kar"]
+size = Vector2(74, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0qj"]
+atlas = ExtResource("3_le2lq")
+region = Rect2(3, 354, 9, 11)
+
+[node name="Grasshopper" type="Area2D" unique_id=2126713087]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_okhy7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1434304378]
+sprite_frames = SubResource("SpriteFrames_yij3p")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854367952]
+position = Vector2(2, -0.5)
+shape = SubResource("RectangleShape2D_51kar")
+
+[node name="TalkButton" type="Sprite2D" parent="." unique_id=1411793196]
+visible = false
+position = Vector2(-1, -25)
+texture = SubResource("AtlasTexture_qe0qj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

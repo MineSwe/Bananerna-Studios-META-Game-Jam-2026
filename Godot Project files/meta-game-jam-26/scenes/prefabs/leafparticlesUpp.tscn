@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c8qtrud814u08"]
+
+[ext_resource type="Texture2D" uid="uid://ck2sdbb6a5vfx" path="res://assets/particles/Leaf.png" id="1_b3i5r"]
+
+[sub_resource type="Curve" id="Curve_76hi8"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.07446808, 69.66293), 110.21006, 110.21006, 0, 0, Vector2(0.17553192, 78.6517), 0.0, 0.0, 0, 0, Vector2(0.2393617, 29.213501), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_rnjyy"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4414894, 41.573036), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1165135826]
+amount = 200
+texture = ExtResource("1_b3i5r")
+lifetime = 20.0
+speed_scale = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+gravity = Vector2(0, -2500)
+initial_velocity_min = 59.41
+initial_velocity_max = 116.21
+angular_velocity_min = 0.4
+angular_velocity_max = 3.0
+linear_accel_min = 9.35
+linear_accel_max = 29.15
+linear_accel_curve = SubResource("Curve_76hi8")
+tangential_accel_max = 39.6
+damping_min = 27.723
+damping_max = 47.419
+damping_curve = SubResource("Curve_rnjyy")
+angle_min = 14.3
+angle_max = 75.7
+scale_amount_min = 0.5
+hue_variation_min = -0.68
+hue_variation_max = 0.48

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dqjto5opm7gai"]
+
+[ext_resource type="Script" uid="uid://dyrpw33ge28sc" path="res://scripts/audio_controller.gd" id="1_8lvwy"]
+[ext_resource type="AudioStream" uid="uid://cgg8lhf17lv0" path="res://assets/music/Menu music.mp3" id="1_b1hyi"]
+[ext_resource type="AudioStream" uid="uid://ejherkgxrjcq" path="res://assets/music/Generall ambiance.mp3" id="2_8lvwy"]
+[ext_resource type="AudioStream" uid="uid://dkk47hjx7ljwb" path="res://assets/music/Intro cutscene.mp3" id="4_7g2nl"]
+[ext_resource type="AudioStream" uid="uid://bd7ivvl7703v2" path="res://assets/music/Boss.mp3" id="5_nken4"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_j3pel"]
+clip_count = 2
+clip_0/name = &"Menu Music"
+clip_0/stream = ExtResource("1_b1hyi")
+clip_0/auto_advance = 0
+clip_1/name = &"Generall Ambiance"
+clip_1/stream = ExtResource("2_8lvwy")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="AudioController" type="Node" unique_id=242983744]
+script = ExtResource("1_8lvwy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=27545641]
+stream = SubResource("AudioStreamInteractive_j3pel")
+volume_db = -2.0
+
+[node name="MainMenuPlayer" type="AudioStreamPlayer" parent="." unique_id=718995150]
+stream = ExtResource("1_b1hyi")
+volume_db = -4.274
+parameters/looping = true
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=611357595]
+stream = ExtResource("2_8lvwy")
+volume_db = -10.447
+parameters/looping = true
+
+[node name="IntroPlayer" type="AudioStreamPlayer" parent="." unique_id=6531656]
+stream = ExtResource("4_7g2nl")
+parameters/looping = true
+
+[node name="Bossplayer" type="AudioStreamPlayer" parent="." unique_id=1256476185]
+stream = ExtResource("5_nken4")
+volume_db = -5.0
+parameters/looping = false

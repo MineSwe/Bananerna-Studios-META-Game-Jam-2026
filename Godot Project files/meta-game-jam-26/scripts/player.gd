@@ -1,10 +1,18 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var options = get_parent().get_node("IngameOptions/CanvasLayer")
+@onready var attack_collision = $Area2D/AttackCollision
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 80.0
+var jump_velocity = -400.0
 
+var is_talking = false
+var is_attacking = false
+
+func _ready():
+	options.visible = false
+	attack_collision.disabled = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -12,12 +20,25 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and is_on_floor() and is_talking == false:
+		velocity.y = jump_velocity
 
+
+	if Input.is_action_just_pressed("esc"):
+		if options.visible == false:
+			options.visible = true
+		else:
+			options.visible = false
+		
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
+	if (options.visible == true or is_talking == true or is_attacking == true):
+		direction = 0
+		jump_velocity = 0
+	else:
+		jump_velocity = -400.0
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -28,7 +49,17 @@ func _physics_process(delta: float) -> void:
 		
 		
 func animation_handler() -> void:
-	if velocity.x > 0:
+	if Input.is_action_just_pressed("attack") and is_attacking == false:
+		is_attacking = true
+		attack_collision.disabled = false
+		animated_sprite_2d.play("attack")
+		if animated_sprite_2d.flip_h == false:
+			animated_sprite_2d.offset = Vector2(18, 0)
+		else:
+			animated_sprite_2d.offset = Vector2(-18, 0)
+	if is_attacking == true:
+		pass
+	elif velocity.x > 0:
 		animated_sprite_2d.play("walk")
 		animated_sprite_2d.flip_h = false
 	elif velocity.x < 0:
@@ -36,4 +67,17 @@ func animation_handler() -> void:
 		animated_sprite_2d.flip_h = true
 	else:
 		animated_sprite_2d.play("idle")
-	 
+	
+
+func _on_grasshopper_dialog() -> void:
+	is_talking = true
+
+func _on_dialogue_ui_stopped_talking() -> void:
+	is_talking = false
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	if is_attacking:
+		is_attacking = false
+		attack_collision.disabled = true
+		animated_sprite_2d.offset = Vector2(0, 0)
+		animated_sprite_2d.play("idle")
