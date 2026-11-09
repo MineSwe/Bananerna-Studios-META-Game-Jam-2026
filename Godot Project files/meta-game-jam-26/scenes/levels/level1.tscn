@@ -4,10 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bop6vphs1dsmi" path="res://assets/map_textures/randomtextures.png" id="1_dywbp"]
 [ext_resource type="Texture2D" uid="uid://dr4fw58d7hvok" path="res://assets/map_textures/citytextures.png" id="2_1seuy"]
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
-[ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/levels/titlescreen/ingame_options.tscn" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
-[ext_resource type="PackedScene" uid="uid://bxw87wn8lb8g7" path="res://scenes/prefabs/dialogue_ui.tscn" id="8_8a7m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -837,7 +835,6 @@ tile_set = SubResource("TileSet_svatc")
 position = Vector2(-140, -27)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1113680403]
-zoom = Vector2(3.045, 3.045)
 limit_left = -331
 limit_bottom = 110
 limit_smoothed = true
@@ -853,19 +850,4 @@ angle_min = 7.3
 z_index = 4
 position = Vector2(100, 17)
 
-[node name="dialogue_ui" parent="." unique_id=266174670 instance=ExtResource("8_8a7m2")]
-visible = false
-
-[node name="IngameOptions" parent="." unique_id=1063647045 instance=ExtResource("4_8a7m2")]
-visible = false
-offset_left = -140.0
-offset_top = -27.0
-offset_right = -140.0
-offset_bottom = -27.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
-[connection signal="dialog" from="Grasshopper" to="dialogue_ui" method="_on_grasshopper_dialog"]
-[connection signal="stopped_talking" from="dialogue_ui" to="Player" method="_on_dialogue_ui_stopped_talking"]
-[connection signal="stopped_talking" from="dialogue_ui" to="Grasshopper" method="_on_dialogue_ui_stopped_talking"]

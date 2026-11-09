@@ -166,7 +166,7 @@ radius = 9.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe0qj"]
 size = Vector2(41, 31)
 
-[node name="Player" type="CharacterBody2D" unique_id=431031109]
+[node name="Player" type="CharacterBody2D" unique_id=431031109 groups=["Player"]]
 z_index = 5
 collision_layer = 3
 script = ExtResource("1_qhqgy")

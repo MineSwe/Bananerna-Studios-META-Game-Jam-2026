@@ -12,7 +12,28 @@ func _ready() -> void:
 
 func _on_grasshopper_dialog() -> void:
 	current_text_id = 0
-	text = ["oh... hello...", "Didn't see you here", "Just 10 years ago it was all perfect", "Then the 1̷̼̪̩͔̀ͮ1̜̹̈ͧ̕͜0͍̞̮̥̑ͣ́͞0̪͎̎̐̍̑͜͝0͔̄͛̒ͭ͟͡0̧̢̥̠̊͒͠1̹̍͒͘͢͡0̷̮͈ͮ̀ͧ1̴̨̹͋̐0͓̹̯̀ͪ͒͂͝0̸̻̠̝̄̏̿ came..."]
+	text = ["*gasp* A newcomer...", 
+		"You must go no further, s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m lives here...", 
+		"s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m consumed...", 
+		"s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m corrupted...",
+		"My brethren...",
+		"They are all s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m now...",
+		"7. *please*...",
+		"save them before̪̓ i̤t'́s̪ͭ t̲͍̓o͉̙̿o̘̓ͮ l̥ͯa̮̐t͚̰́̎e̲̞̙ͭͣ͊...",
+	]
+	dialogue.text = text[current_text_id]
+	is_talking = true
+	$CanvasLayer.visible = true
+
+func _on_boss_dialog() -> void:
+	current_text_id = 0
+	text = [
+		"0̲͍̓1͉̙̿1̘̓ͮ0͙̒0̥ͯ0̮̐1͚̰́̎0̲̞̙ͭͣ͊0͓ͅ1̗̉0̟͗ͥ̇0ͧ",
+		"0̼ͫ̔0͔̤1͋̊1̓ 0ͦ1̳̋͂0̣1͓̌̾0͉̩͒01͕͈͋ͦ",
+		"Ah, a newcomer...",
+		"Come closer... s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m is here...",
+		"join s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m... or  d i e",
+	]
 	dialogue.text = text[current_text_id]
 	is_talking = true
 	$CanvasLayer.visible = true
