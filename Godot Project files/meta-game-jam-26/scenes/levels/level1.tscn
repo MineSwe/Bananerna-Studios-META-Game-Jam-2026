@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://bcnjwp4n17h5g" path="res://scenes/prefabs/boss.tscn" id="8_8a7m2"]
 [ext_resource type="Script" uid="uid://22d7bmbj4kvc" path="res://scenes/levels/boss_area.gd" id="9_plydf"]
+[ext_resource type="PackedScene" uid="uid://dvvla80f20r7m" path="res://scenes/prefabs/ingame_options.tscn" id="7_2r1tl"]
+[ext_resource type="PackedScene" uid="uid://bxw87wn8lb8g7" path="res://scenes/prefabs/dialogue_ui.tscn" id="8_8a7m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -875,6 +877,9 @@ script = ExtResource("9_plydf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=163582410]
 position = Vector2(918, -196.5)
 shape = SubResource("RectangleShape2D_wjliw")
+[node name="IngameOptions" parent="." unique_id=1063647045 instance=ExtResource("7_2r1tl")]
+
+[node name="dialogue_ui" parent="." unique_id=266174670 instance=ExtResource("8_8a7m2")]
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
