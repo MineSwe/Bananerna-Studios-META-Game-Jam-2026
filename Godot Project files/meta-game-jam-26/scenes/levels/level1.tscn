@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
-[ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/prefabs/ingame_options.tscn" id="7_2r1tl"]
+[ext_resource type="PackedScene" uid="uid://dvvla80f20r7m" path="res://scenes/prefabs/ingame_options.tscn" id="7_2r1tl"]
+[ext_resource type="PackedScene" uid="uid://bxw87wn8lb8g7" path="res://scenes/prefabs/dialogue_ui.tscn" id="8_8a7m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -853,5 +854,7 @@ z_index = 4
 position = Vector2(100, 17)
 
 [node name="IngameOptions" parent="." unique_id=1063647045 instance=ExtResource("7_2r1tl")]
+
+[node name="dialogue_ui" parent="." unique_id=266174670 instance=ExtResource("8_8a7m2")]
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]

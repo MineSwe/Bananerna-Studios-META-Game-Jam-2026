@@ -12,13 +12,13 @@ func _ready() -> void:
 
 func _on_grasshopper_dialog() -> void:
 	current_text_id = 0
-	text = ["*gasp* A newcomer...", 
+	text = ["A newcomer!", 
 		"You must go no further, s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m lives here...", 
 		"s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m consumed...", 
 		"s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m corrupted...",
-		"My brethren...",
-		"They are all s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m now...",
-		"7. *please*...",
+		"my brethren...",
+		"they are all s̷̛̗̯͆̃̀w̸̳̹̋̇͒͝a̷͇͌r̴͍͖̯̎̋͝m now...",
+		"please...",
 		"save them before̪̓ i̤t'́s̪ͭ t̲͍̓o͉̙̿o̘̓ͮ l̥ͯa̮̐t͚̰́̎e̲̞̙ͭͣ͊...",
 	]
 	dialogue.text = text[current_text_id]
