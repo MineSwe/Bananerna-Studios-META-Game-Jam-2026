@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://bcnjwp4n17h5g" path="res://scenes/prefabs/boss.tscn" id="8_8a7m2"]
 [ext_resource type="Script" uid="uid://83homfvxw5v8" path="res://scenes/levels/boss_music.gd" id="9_plydf"]
+[ext_resource type="PackedScene" uid="uid://bxw87wn8lb8g7" path="res://scenes/prefabs/dialogue_ui.tscn" id="8_8a7m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -846,11 +847,6 @@ limit_bottom = 110
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="IngameOptions" parent="Player/Camera2D" unique_id=1063647045 instance=ExtResource("4_8a7m2")]
-visible = false
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
 [node name="CPUParticles2D" parent="Player" unique_id=1165135826 instance=ExtResource("5_plydf")]
 position = Vector2(350.324, -224.845)
 amount = 200
@@ -876,3 +872,19 @@ shape = SubResource("RectangleShape2D_wjliw")
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="dialogue_ui" parent="." unique_id=266174670 instance=ExtResource("8_8a7m2")]
+visible = false
+
+[node name="IngameOptions" parent="." unique_id=1063647045 instance=ExtResource("4_8a7m2")]
+visible = false
+offset_left = -140.0
+offset_top = -27.0
+offset_right = -140.0
+offset_bottom = -27.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
+[connection signal="dialog" from="Grasshopper" to="dialogue_ui" method="_on_grasshopper_dialog"]
+[connection signal="stopped_talking" from="dialogue_ui" to="Player" method="_on_dialogue_ui_stopped_talking"]
+[connection signal="stopped_talking" from="dialogue_ui" to="Grasshopper" method="_on_dialogue_ui_stopped_talking"]

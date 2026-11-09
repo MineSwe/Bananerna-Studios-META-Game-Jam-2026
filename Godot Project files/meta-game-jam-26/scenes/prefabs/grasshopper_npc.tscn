@@ -85,15 +85,7 @@ animation = &"idle"
 position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_51kar")
 
-[node name="Label" type="Label" parent="." unique_id=1818570813]
-visible = false
-offset_left = -28.0
-offset_top = -41.0
-offset_right = 28.0
-offset_bottom = -18.0
-text = "Talking"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1411793196]
+[node name="TalkButton" type="Sprite2D" parent="." unique_id=1411793196]
 visible = false
 position = Vector2(-1, -25)
 texture = SubResource("AtlasTexture_qe0qj")
