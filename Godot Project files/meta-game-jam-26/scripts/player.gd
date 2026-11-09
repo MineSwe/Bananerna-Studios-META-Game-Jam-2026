@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var options = get_node("Camera2D/IngameOptions")
+@onready var options = get_parent().get_node("IngameOptions/CanvasLayer")
 
 const SPEED = 80.0
 var jump_velocity = -400.0
 
 var is_talking = false
+
+func _ready():
+	options.visible = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,8 +23,10 @@ func _physics_process(delta: float) -> void:
 
 
 	if Input.is_action_just_pressed("esc"):
-		print("esc")
-		options.visible = true
+		if options.visible == false:
+			options.visible = true
+		else:
+			options.visible = false
 	
 
 	
@@ -54,7 +59,6 @@ func animation_handler() -> void:
 
 func _on_grasshopper_dialog() -> void:
 	is_talking = true
-	print("Is talking = true")
 
 func _on_dialogue_ui_stopped_talking() -> void:
 	is_talking = false
