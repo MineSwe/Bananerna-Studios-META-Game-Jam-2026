@@ -858,6 +858,3 @@ position = Vector2(100, 17)
 [node name="dialogue_ui" parent="." unique_id=266174670 instance=ExtResource("8_8a7m2")]
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
-[connection signal="dialog" from="Grasshopper" to="dialogue_ui" method="_on_grasshopper_dialog"]
-[connection signal="stopped_talking" from="dialogue_ui" to="Player" method="_on_dialogue_ui_stopped_talking"]
-[connection signal="stopped_talking" from="dialogue_ui" to="Grasshopper" method="_on_dialogue_ui_stopped_talking"]
