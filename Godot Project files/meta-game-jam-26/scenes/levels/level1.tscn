@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://trywo3xopl2i" path="res://scenes/prefabs/player.tscn" id="3_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://0lf81uu1l537" path="res://scenes/prefabs/leafparticles.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d1vl30nc35eu7" path="res://scenes/prefabs/grasshopper_npc.tscn" id="6_1seuy"]
+[ext_resource type="PackedScene" uid="uid://v153r48llfp5" path="res://scenes/prefabs/ingame_options.tscn" id="7_2r1tl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrl65"]
 texture = ExtResource("1_dywbp")
@@ -835,6 +836,7 @@ tile_set = SubResource("TileSet_svatc")
 position = Vector2(-140, -27)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1113680403]
+zoom = Vector2(3.045, 3.045)
 limit_left = -331
 limit_bottom = 110
 limit_smoothed = true
@@ -849,5 +851,7 @@ angle_min = 7.3
 [node name="Grasshopper" parent="." unique_id=2126713087 instance=ExtResource("6_1seuy")]
 z_index = 4
 position = Vector2(100, 17)
+
+[node name="IngameOptions" parent="." unique_id=1063647045 instance=ExtResource("7_2r1tl")]
 
 [connection signal="dialog" from="Grasshopper" to="Player" method="_on_grasshopper_dialog"]
